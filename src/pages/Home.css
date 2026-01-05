@@ -1,0 +1,318 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+}
+
+/* Header */
+.home-header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-6) var(--space-4);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+}
+
+.home-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width-7xl);
+  margin: 0 auto var(--space-4);
+}
+
+.home-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+  line-height: 1.2;
+}
+
+.home-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-normal);
+}
+
+.home-avatar-link {
+  transition: transform var(--transition-fast);
+}
+
+.home-avatar-link:hover {
+  transform: scale(1.05);
+}
+
+/* Search */
+.home-search {
+  max-width: var(--max-width-7xl);
+  margin: 0 auto;
+}
+
+.home-search-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-base);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.home-search-input:focus {
+  outline: none;
+  border-color: var(--border-hover);
+  background: var(--bg-primary);
+}
+
+.home-search-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Main Content */
+.home-main {
+  flex: 1;
+  padding: var(--space-6) var(--space-4);
+  max-width: var(--max-width-7xl);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Rooms Grid */
+.home-rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+  animation: fade-in 0.4s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Room Card - Bold Minimal Design */
+.room-card {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  animation: card-slide-in 0.4s ease-out backwards;
+}
+
+@keyframes card-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.room-card:active {
+  transform: translateY(-2px);
+}
+
+.room-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.room-card-emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-color);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-card-badge {
+  position: relative;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 var(--space-2);
+  background: #EF4444;
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.room-card-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+}
+
+.room-card-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.room-card-footer {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-color);
+}
+
+.room-card-groups {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* No Results */
+.home-no-results {
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+  color: var(--text-secondary);
+}
+
+.home-no-results p {
+  font-size: var(--font-size-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-container {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .home-header {
+    padding: var(--space-3);
+  }
+
+  .home-search {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .home-main {
+    padding: var(--space-3);
+  }
+
+  .room-card {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-header {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .home-header-top {
+    margin-bottom: var(--space-3);
+  }
+
+  .home-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .home-subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .home-main {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .home-rooms-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .room-card {
+    padding: var(--space-5);
+  }
+
+  .room-card-emoji {
+    font-size: 2.5rem;
+  }
+
+  .room-card-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .room-card-description {
+    font-size: var(--font-size-sm);
+  }
+
+  .room-card-groups {
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .home-rooms-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* Tablet and above - remove sticky header on desktop */
+@media (min-width: 769px) {
+  .home-header {
+    position: relative;
+  }
+}
+
+/* Touch improvements for mobile */
+@media (hover: none) {
+  .room-card:hover {
+    transform: none;
+  }
+
+  .room-card:active {
+    transform: scale(0.98);
+  }
+}

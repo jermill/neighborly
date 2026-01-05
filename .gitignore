@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Production builds
+/dist
+/build
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Cache
+.cache/
+.parcel-cache/
+.vite/
+
+# Testing
+/coverage
+*.log
+
+# Temporary files
+*.tmp
+.temp/
+
+# PWA
+dev-dist/
+sw.js
+workbox-*.js
+
+# Netlify
+.netlify/
