@@ -1,5 +1,7 @@
 # Neighborly Chat PWA
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jermill/neighborly)
+
 A React-based Progressive Web Application for neighborhood chat rooms, built with Vite and optimized for Netlify deployment.
 
 ## 🏘️ About
